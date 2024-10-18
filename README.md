@@ -1,2 +1,1 @@
-# Control-of-the-proper-functioning-of-digital-systems
-How to check the proper functioning of a digital system
+Checking the correct operation of digital systems. Types of digital system health check, physical faults and fault models, fault detection and diagnosis, fault simulation, test vector extraction for logic control, current-based control techniques, design techniques for easy health check, scan paths, boundary-scan, boundary-scan, embedded control techniques, test vector generation circuits, compression circuits, memory health check, System-on-a-Chip health check.
