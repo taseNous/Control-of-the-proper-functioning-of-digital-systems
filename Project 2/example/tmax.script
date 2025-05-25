@@ -1,0 +1,20 @@
+read netlist s444_scan_netlist.v
+read netlist $UMC_LIB/verilog_simulation_models/*.v
+run build_model s444
+set drc s444.spf
+run drc
+
+add faults -all
+set pattern internal
+run atpg
+write patterns s444_myvectors.v  -nocompaction -serial -type basic_scan -replace
+set pattern external s444_myvectors.v
+set simulation -basic_scan
+reset state
+run fault_sim
+report summaries
+write   faults  detected_faults.dat      -class DT  -uncollapsed -replace
+write   faults  not_detected_faults.dat  -class UD  -uncollapsed -replace
+write   faults  faults.dat                -all      -uncollapsed -replace
+
+quit

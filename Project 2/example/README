@@ -1,0 +1,20 @@
+####################################################
+# Synthesis
+####################################################
+
+dc_shell -f run.tcl | tee syn.log
+
+or
+
+dc_shell -f run_reordered.tcl | tee syn_reordered.log
+
+
+####################################################
+# tetramax
+####################################################
+
+tmax -notcl
+
+or
+
+tmax -shell -notcl tmax.script | tee tmax.log
