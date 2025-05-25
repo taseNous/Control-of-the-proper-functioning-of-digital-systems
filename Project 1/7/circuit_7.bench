@@ -1,0 +1,11 @@
+# circuit_7
+INPUT (A)
+INPUT (B)
+INPUT (C)
+INPUT (D)
+INPUT (E)
+OUTPUT (F)
+G = AND (A, B)
+H = AND (C, D)
+I = OR (G, H)
+F = AND (E, I)

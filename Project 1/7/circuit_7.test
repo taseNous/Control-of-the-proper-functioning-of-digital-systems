@@ -1,0 +1,15 @@
+* Name of circuit:  circuit_7.bench
+* Primary inputs :
+  A B C D E 
+  
+* Primary outputs:
+  F 
+
+* Test patterns and fault free responses:
+
+   1: 10111 1
+   2: 11010 0
+   3: 00011 0
+   4: 11011 1
+   5: 01101 0
+   6: 10001 0
