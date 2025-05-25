@@ -1,0 +1,88 @@
+BUILD> read netlist s5378_synth.v
+ Begin reading netlist ( s5378_synth.v )... 
+ End parsing Verilog file s5378_synth.v with 0 errors. 
+ End reading netlist: #modules=274, top=s5378, #lines=2764, CPU_time=0.02 sec, Memory=1MB 
+BUILD> read netlist /localdisk/libraries/UMCL18U250D2_2.4/verilog_simulation_models/*.v
+ Begin reading netlists ( /localdisk/libraries/UMCL18U250D2_2.4/verilog_simulation_models/*.v )... 
+ End reading netlists: #files=506, #errors=0, #modules=436, top=NOR4M2D4, #lines=29130, CPU_time=0.27 sec, Memory=11MB 
+BUILD> run build_model s5378
+ ------------------------------------------------------------------------------ 
+ Begin build model for topcut = s5378 ... 
+ ------------------------------------------------------------------------------ 
+ There were 641 primitives and 0 faultable pins removed during model optimizations 
+ Warning: Rule N21 (unsupported UDP entry) was violated 1 times. 
+ End build model: #primitives=1476, CPU_time=0.03 sec, Memory=1MB 
+ ------------------------------------------------------------------------------ 
+ Begin learning analyses... 
+ End learning analyses, total learning CPU time=0.03 sec. 
+ ------------------------------------------------------------------------------ 
+DRC> run drc
+ ------------------------------------------------------------------------------ 
+ Begin scan design rules checking... 
+ ------------------------------------------------------------------------------ 
+ Begin simulating test protocol procedures... 
+ Test protocol simulation completed, CPU time=0.00 sec. 
+ ------------------------------------------------------------------------------ 
+ Begin scan chain operation checking... 
+ Scan chain operation checking completed, CPU time=0.00 sec. 
+ ------------------------------------------------------------------------------ 
+ Begin clock rules checking... 
+ Warning: Rule C2 (unstable nonscan DFF when clocks off) was violated 179 times. 
+ Clock rules checking completed, CPU time=0.00 sec. 
+ ------------------------------------------------------------------------------ 
+ Begin nonscan rules checking... 
+ Nonscan cell summary: #DFF=179  #DLAT=0  #RAM_outs=0  tla_usage_type=none 
+ Nonscan behavior:  #CU=179 
+ Nonscan rules checking completed, CPU time=0.00 sec. 
+ ------------------------------------------------------------------------------ 
+ Begin DRC dependent learning... 
+ Fast-sequential depth results: control=0(0), observe=0(0), detect=0(0), CPU time=0.00 sec 
+ DRC dependent learning completed, CPU time=0.01 sec. 
+ ------------------------------------------------------------------------------ 
+ DRC Summary Report 
+ ------------------------------------------------------------------------------ 
+ Warning: Rule C2 (unstable nonscan DFF when clocks off) was violated 179 times. 
+ There were 179 violations that occurred during DRC process. 
+ Design rules checking was successful, total CPU time=0.01 sec. 
+ ------------------------------------------------------------------------------ 
+TEST> add faults -all
+ 6168 faults were added to fault list. 
+TEST> set patterns internal
+TEST> run atpg
+ ATPG performed for stuck fault model using internal pattern source. 
+ ---------------------------------------------------------- 
+ #patterns     #faults     #ATPG faults  test      process 
+ stored     detect/active  red/au/abort  coverage  CPU time 
+ ---------  -------------  ------------  --------  -------- 
+ Begin deterministic ATPG: #uncollapsed_faults=703, abort_limit=10... 
+ 11            310    318        0/22/0     5.23%      0.02 
+ 15             15      0       0/134/0     5.46%      0.05 
+  
+     Uncollapsed Stuck Fault Summary Report 
+ ----------------------------------------------- 
+ fault class                     code   #faults 
+ ------------------------------  ----  --------- 
+ Detected                         DT        325 
+ Possibly detected                PT         23 
+ Undetectable                     UD          9 
+ ATPG untestable                  AU       5811 
+ Not detected                     ND          0 
+ ----------------------------------------------- 
+ total faults                              6168 
+ test coverage                             5.46% 
+ ----------------------------------------------- 
+            Pattern Summary Report 
+ ----------------------------------------------- 
+ #internal patterns                          15 
+     #basic_scan patterns                    15 
+ -----------------------------------------------  
+TEST> write patterns s5378.v -nocompaction -serial -type basic_scan -replace
+ 15 patterns of possible 15 patterns were selected based on type. 
+ End writing file 's5378.v' with 15 patterns, File_size = 1928, CPU_time = 0.0 sec. 
+TEST> set patterns external s5378.v
+ End parsing binary file s5378.v with 0 errors. 
+ End reading 15 patterns, CPU_time = 0.00 sec, Memory = 0MB 
+TEST> run fault_sim
+ 41           6168      0     5.46%      0.06 
+TEST> write faults undetected_faults.dat -class ND
+ Write faults completed: 0 faults were written into file "undetected_faults.dat"

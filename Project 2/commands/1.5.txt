@@ -1,0 +1,822 @@
+set mydesign c7552
+c7552
+remove_design -all
+1
+analyze -f verilog ${mydesign}.v
+Running PRESTO HDLC
+Compiling source file ./c7552.v
+Presto compilation completed successfully.
+Loading db file '/localdisk/libraries/UMCL18U250D2_2.4/design_compiler/umcl18u250t2_wc.db'
+1
+elaborate $mydesign
+Loading db file '/eda/synopsys/2017-18/RHELx86/SYN_2017.09-SP3/libraries/syn/gtech.db'
+Loading db file '/eda/synopsys/2017-18/RHELx86/SYN_2017.09-SP3/libraries/syn/standard.sldb'
+Warning: The library named umcl18u250t2_wc specifies a very small trip-point value (0). (TIM-163)
+Warning: The library named umcl18u250t2_wc specifies a very small trip-point value (0). (TIM-163)
+  Loading link library 'umcl18u250t2_wc'
+  Loading link library 'gtech'
+Running PRESTO HDLC
+Presto compilation completed successfully.
+Elaborated 1 design.
+Current design is now 'c7552'.
+1
+current_design $mydesign
+Current design is 'c7552'.
+{c7552}
+create_clock -period 8  -name clk
+Warning: Creating virtual clock named 'clk' with no sources. (UID-348)
+1
+set_clock_latency    2  clk
+1
+set_input_delay      2 -clock clk [remove_from_collection [all_inputs] clk]
+Warning: Nothing implicitly matched 'clk' (SEL-003)
+1
+set_output_delay     2 -clock clk [all_outputs]
+1
+set_driving_cell -library umcl18u250t2_wc -lib_cell INVD1 [remove_from_collection [all_inputs] clk]
+Warning: Nothing implicitly matched 'clk' (SEL-003)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+1
+set_load 0.1 [all_outputs]
+1
+set_max_fanout 8 [all_inputs]
+1
+set_fanout_load 8 [all_outputs]
+1
+set_max_area 0
+1
+compile
+Information: Evaluating DesignWare library utilization. (UISN-27)
+
+============================================================================
+| DesignWare Building Block Library  |         Version         | Available |
+============================================================================
+| Basic DW Building Blocks           | N-2017.09-DWBB_201709.3 |     *     |
+| Licensed DW Building Blocks        |                         |           |
+============================================================================
+
+
+Information: There are 52 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+
+
+  Beginning Pass 1 Mapping
+  ------------------------
+  Processing 'c7552'
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+
+  Beginning Mapping Optimizations  (Medium effort)
+  -------------------------------
+
+                                  TOTAL
+   ELAPSED            WORST NEG   SETUP    DESIGN
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:04   27718.9      0.00       0.0      91.0
+    0:00:04   27718.9      0.00       0.0      91.0
+    0:00:04   27718.9      0.00       0.0      91.0
+    0:00:04   27718.9      0.00       0.0      91.0
+    0:00:04   27718.9      0.00       0.0      91.0
+    0:00:05   18213.6      0.67       4.8      91.0
+    0:00:05   18526.6      0.41       1.3      91.0
+    0:00:06   18502.3      0.23       0.5      91.0
+    0:00:06   18412.8      0.13       0.1      91.0
+    0:00:06   18412.8      0.24       0.9      91.0
+    0:00:06   18567.3      0.00       0.0      91.0
+    0:00:06   18534.8      0.00       0.0      91.0
+    0:00:06   18518.5      0.00       0.0      91.0
+    0:00:07   18449.4      0.02       0.0      91.0
+    0:00:07   18461.6      0.01       0.0      91.0
+    0:00:07   18482.0      0.00       0.0      91.0
+    0:00:07   18482.0      0.00       0.0      91.0
+    0:00:07   18482.0      0.00       0.0      91.0
+    0:00:07   18482.0      0.00       0.0      91.0
+    0:00:07   18482.0      0.00       0.0      91.0
+    0:00:07   18482.0      0.00       0.0      91.0
+    0:00:07   18482.0      0.00       0.0      91.0
+
+
+
+  Beginning Delay Optimization Phase
+  ----------------------------------
+
+                                  TOTAL
+   ELAPSED            WORST NEG   SETUP    DESIGN
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:07   18482.0      0.00       0.0      91.0
+    0:00:07   18482.0      0.00       0.0      91.0
+    0:00:07   18482.0      0.00       0.0      91.0
+
+
+  Beginning Design Rule Fixing  (max_fanout)
+  ----------------------------
+
+                                  TOTAL
+   ELAPSED            WORST NEG   SETUP    DESIGN
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:07   18482.0      0.00       0.0      91.0
+    0:00:07   18986.0      0.00       0.0       7.0 N254
+    0:00:07   19099.8      0.00       0.0       0.0
+
+
+  Beginning Area-Recovery Phase  (max_area 0)
+  -----------------------------
+
+                                  TOTAL
+   ELAPSED            WORST NEG   SETUP    DESIGN
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:07   19099.8      0.00       0.0       0.0
+    0:00:07   19099.8      0.00       0.0       0.0
+    0:00:07   19006.3      0.00       0.0       0.0
+    0:00:07   18986.0      0.00       0.0       0.0
+    0:00:07   18969.8      0.00       0.0       0.0
+    0:00:07   18969.8      0.00       0.0       0.0
+    0:00:07   18969.8      0.00       0.0       0.0
+    0:00:07   18969.8      0.00       0.0       0.0
+    0:00:07   18969.8      0.00       0.0       0.0
+    0:00:07   18815.3      0.17       0.2       0.0
+    0:00:07   18807.2      0.17       0.2       0.0
+    0:00:07   18807.2      0.17       0.2       0.0
+    0:00:07   18807.2      0.17       0.2       0.0
+    0:00:07   18807.2      0.17       0.2       0.0
+    0:00:07   18807.2      0.17       0.2       0.0
+    0:00:07   18807.2      0.17       0.2       0.0
+    0:00:08   18481.8      0.00       0.0       0.0
+    0:00:08   18457.4      0.00       0.0       0.0
+    0:00:08   18457.4      0.00       0.0       0.0
+    0:00:08   18457.4      0.00       0.0       0.0
+    0:00:08   18457.4      0.00       0.0       0.0
+    0:00:08   18457.4      0.00       0.0       0.0
+    0:00:08   18457.4      0.00       0.0       0.0
+    0:00:08   18457.4      0.00       0.0       0.0
+Loading db file '/localdisk/libraries/UMCL18U250D2_2.4/design_compiler/umcl18u250t2_wc.db'
+
+
+Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios
+
+
+  Optimization Complete
+  ---------------------
+1
+check_design
+
+****************************************
+check_design summary:
+Version:     N-2017.09-SP3
+Date:        Fri Jun 16 23:50:54 2023
+****************************************
+
+                   Name                                            Total
+--------------------------------------------------------------------------------
+Inputs/Outputs                                                     13
+    Feedthrough (LINT-29)                                           1
+    Shorted outputs (LINT-31)                                      12
+--------------------------------------------------------------------------------
+
+Warning: In design 'c7552', input port 'N241_I' is connected directly to output port 'N241_O'. (LINT-29)
+Warning: In design 'c7552', output port 'N387' is connected directly to output port 'N1490'. (LINT-31)
+Warning: In design 'c7552', output port 'N387' is connected directly to output port 'N889'. (LINT-31)
+Warning: In design 'c7552', output port 'N387' is connected directly to output port 'N388'. (LINT-31)
+Warning: In design 'c7552', output port 'N582' is connected directly to output port 'N1114'. (LINT-31)
+Warning: In design 'c7552', output port 'N582' is connected directly to output port 'N1111'. (LINT-31)
+Warning: In design 'c7552', output port 'N1110' is connected directly to output port 'N1112'. (LINT-31)
+Warning: In design 'c7552', output port 'N1113' is connected directly to output port 'N1489'. (LINT-31)
+Warning: In design 'c7552', output port 'N10102' is connected directly to output port 'N10103'. (LINT-31)
+Warning: In design 'c7552', output port 'N10102' is connected directly to output port 'N10628'. (LINT-31)
+Warning: In design 'c7552', output port 'N10104' is connected directly to output port 'N10706'. (LINT-31)
+Warning: In design 'c7552', output port 'N10837' is connected directly to output port 'N10838'. (LINT-31)
+Warning: In design 'c7552', output port 'N10839' is connected directly to output port 'N10840'. (LINT-31)
+1
+report_constraint -all_violators
+Information: Updating design information... (UID-85)
+
+****************************************
+Report : constraint
+        -all_violators
+Design : c7552
+Version: N-2017.09-SP3
+Date   : Fri Jun 16 23:50:54 2023
+****************************************
+
+
+   max_area
+
+                             Required        Actual
+   Design                      Area           Area           Slack
+   -----------------------------------------------------------------
+   c7552                        0.00       18457.44       -18457.44 (VIOLATED)
+
+
+1
+write -format verilog -hierarchy -output ${mydesign}_synth.v
+Writing verilog file '/localdisk/users/aven/vlsi_testing_lab2/exercise1/exercise1/c7552_synth.v'.
+Warning: Verilog 'assign' or 'tran' statements are written out. (VO-4)
+1
+write -format verilog -hierarchy -output ${mydesign}_synth.v
+Writing verilog file '/localdisk/users/aven/vlsi_testing_lab2/exercise1/exercise1/c7552_synth.v'.
+Warning: Verilog 'assign' or 'tran' statements are written out. (VO-4)
+1
+write_sdf ${mydesign}_synth.sdf
+Information: Annotated 'cell' delays are assumed to include load delay. (UID-282)
+Information: Writing timing information to file '/localdisk/users/aven/vlsi_testing_lab2/exercise1/exercise1/c7552_synth.sdf'. (WT-3)
+1
+write_sdc  ${mydesign}.sdc
+1
+1
+
+
+BUILD> read netlist c7552_synth.v
+ Begin reading netlist ( c7552_synth.v )... 
+ End parsing Verilog file c7552_synth.v with 0 errors. 
+ End reading netlist: #modules=72, top=c7552, #lines=1077, CPU_time=0.01 sec, Memory=0MB 
+BUILD> read netlist /localdisk/libraries/UMCL18U250D2_2.4/verilog_simulation_models/*.v
+ Begin reading netlists ( /localdisk/libraries/UMCL18U250D2_2.4/verilog_simulation_models/*.v )... 
+ End reading netlists: #files=506, #errors=0, #modules=459, top=NOR4M2D4, #lines=29130, CPU_time=0.27 sec, Memory=11MB 
+BUILD> run build_model c7552
+ ------------------------------------------------------------------------------ 
+ Begin build model for topcut = c7552 ... 
+ ------------------------------------------------------------------------------ 
+ There were 103 primitives and 0 faultable pins removed during model optimizations 
+ End build model: #primitives=1633, CPU_time=0.02 sec, Memory=1MB 
+ ------------------------------------------------------------------------------ 
+ Begin learning analyses... 
+ End learning analyses, total learning CPU time=0.04 sec. 
+ ------------------------------------------------------------------------------ 
+DRC> run drc
+ ------------------------------------------------------------------------------ 
+ Begin scan design rules checking... 
+ ------------------------------------------------------------------------------ 
+ Begin simulating test protocol procedures... 
+ Test protocol simulation completed, CPU time=0.00 sec. 
+ ------------------------------------------------------------------------------ 
+ Begin scan chain operation checking... 
+ Scan chain operation checking completed, CPU time=0.00 sec. 
+ ------------------------------------------------------------------------------ 
+ Begin nonscan rules checking... 
+ Nonscan cell summary: #DFF=0  #DLAT=0  #RAM_outs=0  tla_usage_type=none 
+ Nonscan rules checking completed, CPU time=0.00 sec. 
+ ------------------------------------------------------------------------------ 
+ Begin DRC dependent learning... 
+ Fast-sequential depth results: control=0(0), observe=0(0), detect=0(0), CPU time=0.00 sec 
+ DRC dependent learning completed, CPU time=0.01 sec. 
+ ------------------------------------------------------------------------------ 
+ DRC Summary Report 
+ ------------------------------------------------------------------------------ 
+ No violations occurred during DRC process. 
+ Design rules checking was successful, total CPU time=0.01 sec. 
+ ------------------------------------------------------------------------------ 
+TEST> add faults -all
+ 6892 faults were added to fault list. 
+TEST> set patterns external c7552_test_set_10.v
+ End reading 10 patterns, CPU_time = 0.01 sec, Memory = 0MB 
+TEST> run fault_sim
+ Simulation performed for 6892 faults on circuit size of 1633 gates. 
+ -------------------------------------------- 
+ #patterns     #faults     test      process 
+ simulated  detect/active  coverage  CPU time 
+ ---------  -------------  --------  -------- 
+ 10           4556   2336    66.11%      0.00 
+ Fault simulation completed: #patterns=10, CPU time=0.00 
+TEST> write faults undetected_faults_10.dat -class ND
+ Write faults completed: 2336 faults were written into file "undetected_faults_10.dat". 
+TEST> set patterns external c7552_test_set_50.v
+ Warning: Current external pattern set is now deleted. (M134) 
+ End reading 48 patterns, CPU_time = 0.03 sec, Memory = 0MB 
+TEST> run fault_sim
+ Simulation performed for 2336 faults on circuit size of 1633 gates. 
+ -------------------------------------------- 
+ #patterns     #faults     test      process 
+ simulated  detect/active  coverage  CPU time 
+ ---------  -------------  --------  -------- 
+ 32           1038   1298    81.17%      0.00 
+ 48            275   1023    85.16%      0.00 
+ Fault simulation completed: #patterns=48, CPU time=0.00 
+TEST> write faults undetected_faults_50.dat -class ND
+ Write faults completed: 1023 faults were written into file "undetected_faults_50.dat". 
+TEST> set patterns external c7552_test_set_100.v
+ Warning: Current external pattern set is now deleted. (M134) 
+ End reading 77 patterns, CPU_time = 0.04 sec, Memory = 0MB 
+TEST> run fault_sim
+ Simulation performed for 1023 faults on circuit size of 1633 gates. 
+ -------------------------------------------- 
+ #patterns     #faults     test      process 
+ simulated  detect/active  coverage  CPU time 
+ ---------  -------------  --------  -------- 
+ 32            248    775    88.76%      0.00 
+ 64             97    678    90.16%      0.00 
+ 77             29    649    90.58%      0.00 
+ Fault simulation completed: #patterns=77, CPU time=0.00 
+TEST> write faults undetected_faults_100.dat -class ND
+ Write faults completed: 649 faults were written into file "undetected_faults_100.dat". 
+TEST> set patterns external c7552_test_set_1000.v
+ Warning: Current external pattern set is now deleted. (M134) 
+ End reading 148 patterns, CPU_time = 0.08 sec, Memory = 0MB 
+TEST> run fault_sim
+ Simulation performed for 649 faults on circuit size of 1633 gates. 
+ -------------------------------------------- 
+ #patterns     #faults     test      process 
+ simulated  detect/active  coverage  CPU time 
+ ---------  -------------  --------  -------- 
+ 32             39    610    91.15%      0.00 
+ 64             16    594    91.38%      0.00 
+ 96             36    558    91.90%      0.00 
+ 128            48    510    92.60%      0.00 
+ 148            48    462    93.30%      0.00 
+ Fault simulation completed: #patterns=148, CPU time=0.00 
+TEST> write faults undetected_faults_1000.dat -class ND
+ Write faults completed: 462 faults were written into file "undetected_faults_1000.dat". 
+TEST> set patterns external c7552_test_set_5000.v
+ Warning: Current external pattern set is now deleted. (M134) 
+ End reading 181 patterns, CPU_time = 0.08 sec, Memory = 0MB 
+TEST> run fault_sim
+ Simulation performed for 462 faults on circuit size of 1633 gates. 
+ -------------------------------------------- 
+ #patterns     #faults     test      process 
+ simulated  detect/active  coverage  CPU time 
+ ---------  -------------  --------  -------- 
+ 128             7    455    93.40%      0.01 
+ 160            59    396    94.25%      0.01 
+ 181            63    333    95.17%      0.01 
+ Fault simulation completed: #patterns=181, CPU time=0.01 
+TEST> write faults undetected_faults_5000.dat -class ND
+ Write faults completed: 333 faults were written into file "undetected_faults_5000.dat". 
+TEST> set patterns external c7552_test_set_10000.v
+ Warning: Current external pattern set is now deleted. (M134) 
+ End reading 175 patterns, CPU_time = 0.09 sec, Memory = 0MB 
+TEST> run fault_sim
+ Simulation performed for 333 faults on circuit size of 1633 gates. 
+ -------------------------------------------- 
+ #patterns     #faults     test      process 
+ simulated  detect/active  coverage  CPU time 
+ ---------  -------------  --------  -------- 
+ 160             9    324    95.30%      0.00 
+ 175            27    297    95.69%      0.00 
+ Fault simulation completed: #patterns=175, CPU time=0.00 
+TEST> write faults undetected_faults_10000.dat -class ND
+ Write faults completed: 297 faults were written into file "undetected_faults_10000.dat". 
+TEST> set patterns external c7552_test_set_100000.v
+ Warning: Current external pattern set is now deleted. (M134) 
+ End reading 208 patterns, CPU_time = 0.11 sec, Memory = 0MB 
+TEST> run fault_sim
+ Simulation performed for 297 faults on circuit size of 1633 gates. 
+ -------------------------------------------- 
+ #patterns     #faults     test      process 
+ simulated  detect/active  coverage  CPU time 
+ ---------  -------------  --------  -------- 
+ 64             13    284    95.88%      0.00 
+ 96              3    281    95.92%      0.00 
+ 160             7    274    96.02%      0.00 
+ 192            70    204    97.04%      0.00 
+ 208            70    134    98.06%      0.00 
+ Fault simulation completed: #patterns=208, CPU time=0.00 
+TEST> write faults undetected_faults_100000.dat -class ND
+ Write faults completed: 134 faults were written into file "undetected_faults_100000.dat". 
+TEST> set patterns external c7552_test_set_1000000.v
+ Warning: Current external pattern set is now deleted. (M134) 
+ End reading 241 patterns, CPU_time = 0.12 sec, Memory = 0MB 
+TEST> run fault_sim
+ Simulation performed for 134 faults on circuit size of 1633 gates. 
+ -------------------------------------------- 
+ #patterns     #faults     test      process 
+ simulated  detect/active  coverage  CPU time 
+ ---------  -------------  --------  -------- 
+ 160             2    132    98.08%      0.01 
+ 192             3    129    98.13%      0.01 
+ 224             9    120    98.26%      0.01 
+ 241            44     76    98.90%      0.01 
+ Fault simulation completed: #patterns=241, CPU time=0.01 
+TEST> write faults undetected_faults_1000000.dat -class ND
+ Write faults completed: 76 faults were written into file "undetected_faults_1000000.dat". 
+TEST> set patterns external c7552_test_set_10000000.v
+ Warning: Current external pattern set is now deleted. (M134) 
+ End reading 259 patterns, CPU_time = 0.13 sec, Memory = 0MB 
+TEST> run fault_sim
+ Simulation performed for 76 faults on circuit size of 1633 gates. 
+ -------------------------------------------- 
+ #patterns     #faults     test      process 
+ simulated  detect/active  coverage  CPU time 
+ ---------  -------------  --------  -------- 
+ 224             1     75    98.91%      0.00 
+ 256            30     45    99.35%      0.00 
+ 259             2     43    99.38%      0.00 
+ Fault simulation completed: #patterns=259, CPU time=0.00 
+TEST> write faults undetected_faults_10000000.dat -class ND
+ Write faults completed: 43 faults were written into file "undetected_faults_10000000.dat".

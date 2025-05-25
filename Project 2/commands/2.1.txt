@@ -1,0 +1,350 @@
+set mydesign s1423
+s1423
+remove_design -all
+1
+analyze -f verilog ${mydesign}.v
+Running PRESTO HDLC
+Compiling source file ./s1423.v
+Presto compilation completed successfully.
+Loading db file '/localdisk/libraries/UMCL18U250D2_2.4/design_compiler/umcl18u250t2_wc.db'
+1
+elaborate $mydesign
+Loading db file '/eda/synopsys/2017-18/RHELx86/SYN_2017.09-SP3/libraries/syn/gtech.db'
+Loading db file '/eda/synopsys/2017-18/RHELx86/SYN_2017.09-SP3/libraries/syn/standard.sldb'
+Warning: The library named umcl18u250t2_wc specifies a very small trip-point value (0). (TIM-163)
+Warning: The library named umcl18u250t2_wc specifies a very small trip-point value (0). (TIM-163)
+  Loading link library 'umcl18u250t2_wc'
+  Loading link library 'gtech'
+Running PRESTO HDLC
+Presto compilation completed successfully.
+Elaborated 1 design.
+Current design is now 's1423'.
+Information: Building the design 'dff'. (HDL-193)
+
+Inferred memory devices in process
+        in routine dff line 804 in file
+                './s1423.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|        Q_reg        | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+1
+current_design $mydesign
+Current design is 's1423'.
+{s1423}
+create_clock -period 8  -name clk
+Warning: Creating virtual clock named 'clk' with no sources. (UID-348)
+1
+set_clock_latency    2  clk
+1
+set_input_delay      2 -clock clk [remove_from_collection [all_inputs] clk]
+Warning: Nothing implicitly matched 'clk' (SEL-003)
+1
+set_output_delay     2 -clock clk [all_outputs]
+1
+set_driving_cell -library umcl18u250t2_wc -lib_cell INVD1 [remove_from_collection [all_inputs] clk]
+Warning: Nothing implicitly matched 'clk' (SEL-003)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+1
+set_load 0.1 [all_outputs]
+1
+set_max_fanout 8 [all_inputs]
+1
+set_fanout_load 8 [all_outputs]
+1
+set_max_area 0
+1
+compile
+Information: Evaluating DesignWare library utilization. (UISN-27)
+
+============================================================================
+| DesignWare Building Block Library  |         Version         | Available |
+============================================================================
+| Basic DW Building Blocks           | N-2017.09-DWBB_201709.3 |     *     |
+| Licensed DW Building Blocks        |                         |           |
+============================================================================
+
+
+Information: There are 2 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+
+
+  Beginning Pass 1 Mapping
+  ------------------------
+  Processing 'dff_0'
+  Processing 's1423'
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+
+  Beginning Mapping Optimizations  (Medium effort)
+  -------------------------------
+  Mapping Optimization (Phase 1)
+
+                                  TOTAL
+   ELAPSED            WORST NEG   SETUP    DESIGN
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:04   15213.1      0.00       0.0       5.0
+    0:00:04   15213.1      0.00       0.0       5.0
+    0:00:04   15213.1      0.00       0.0       5.0
+    0:00:04   15213.1      0.00       0.0       5.0
+    0:00:04   15213.1      0.00       0.0       5.0
+    0:00:04   10879.0      0.17       0.2       5.0
+    0:00:04   10972.6      0.00       0.0       5.0
+    0:00:04   10940.0      0.04       0.0       5.0
+    0:00:05   10956.3      0.00       0.0       5.0
+    0:00:05   10931.9      0.00       0.0       5.0
+    0:00:05   10972.6      0.00       0.0       5.0
+    0:00:05   10956.3      0.00       0.0       5.0
+    0:00:05   10956.3      0.00       0.0       5.0
+    0:00:05   10956.3      0.00       0.0       5.0
+    0:00:05   10956.3      0.00       0.0       5.0
+    0:00:05   10956.3      0.00       0.0       5.0
+    0:00:05   10956.3      0.00       0.0       5.0
+    0:00:05   10956.3      0.00       0.0       5.0
+    0:00:05   10956.3      0.00       0.0       5.0
+
+
+
+  Beginning Delay Optimization Phase
+  ----------------------------------
+
+                                  TOTAL
+   ELAPSED            WORST NEG   SETUP    DESIGN
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:05   10956.3      0.00       0.0       5.0
+    0:00:05   10956.3      0.00       0.0       5.0
+    0:00:05   10956.3      0.00       0.0       5.0
+
+
+  Beginning Design Rule Fixing  (max_fanout)
+  ----------------------------
+
+                                  TOTAL
+   ELAPSED            WORST NEG   SETUP    DESIGN
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:05   10956.3      0.00       0.0       5.0
+    0:00:05   10972.6      0.00       0.0       0.0
+
+
+  Beginning Area-Recovery Phase  (max_area 0)
+  -----------------------------
+
+                                  TOTAL
+   ELAPSED            WORST NEG   SETUP    DESIGN
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:05   10972.6      0.00       0.0       0.0
+    0:00:05   10972.6      0.00       0.0       0.0
+    0:00:05   10936.0      0.00       0.0       0.0
+    0:00:05   10919.7      0.00       0.0       0.0
+    0:00:05   10911.6      0.00       0.0       0.0
+    0:00:05   10903.4      0.00       0.0       0.0
+    0:00:05   10895.3      0.00       0.0       0.0
+    0:00:05   10895.3      0.00       0.0       0.0
+    0:00:05   10895.3      0.00       0.0       0.0
+    0:00:05   10838.4      0.11       0.1       0.0
+    0:00:05   10809.9      0.08       0.1       0.0
+    0:00:05   10809.9      0.08       0.1       0.0
+    0:00:05   10809.9      0.08       0.1       0.0
+    0:00:05   10809.9      0.08       0.1       0.0
+    0:00:05   10809.9      0.08       0.1       0.0
+    0:00:05   10809.9      0.08       0.1       0.0
+    0:00:05   10818.1      0.00       0.0       0.0
+    0:00:05   10797.7      0.00       0.0       0.0
+    0:00:05   10797.7      0.00       0.0       0.0
+    0:00:05   10797.7      0.00       0.0       0.0
+    0:00:05   10797.7      0.00       0.0       0.0
+    0:00:05   10797.7      0.00       0.0       0.0
+    0:00:05   10797.7      0.00       0.0       0.0
+    0:00:05   11005.1      0.00       0.0       0.0
+Loading db file '/localdisk/libraries/UMCL18U250D2_2.4/design_compiler/umcl18u250t2_wc.db'
+
+
+Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios
+
+
+  Optimization Complete
+  ---------------------
+1
+check_design
+
+****************************************
+check_design summary:
+Version:     N-2017.09-SP3
+Date:        Fri Jun 16 10:43:10 2023
+****************************************
+
+                   Name                                            Total
+--------------------------------------------------------------------------------
+Inputs/Outputs                                                      2
+    Unconnected ports (LINT-28)                                     2
+--------------------------------------------------------------------------------
+
+Warning: In design 's1423', port 'GND' is not connected to any nets. (LINT-28)
+Warning: In design 's1423', port 'VDD' is not connected to any nets. (LINT-28)
+1
+report_constraint -all_violators
+Information: Updating design information... (UID-85)
+
+****************************************
+Report : constraint
+        -all_violators
+Design : s1423
+Version: N-2017.09-SP3
+Date   : Fri Jun 16 10:43:10 2023
+****************************************
+
+
+   max_area
+
+                             Required        Actual
+   Design                      Area           Area           Slack
+   -----------------------------------------------------------------
+   s1423                        0.00       11005.07       -11005.07 (VIOLATED)
+
+
+1
+write -format verilog -hierarchy -output ${mydesign}_synth.v
+Writing verilog file '/localdisk/users/aven/vlsi_testing_lab2/exercise2/s1423_synth.v'.
+Warning: Verilog 'assign' or 'tran' statements are written out. (VO-4)
+1
+write -format verilog -hierarchy -output ${mydesign}_synth.v
+Writing verilog file '/localdisk/users/aven/vlsi_testing_lab2/exercise2/s1423_synth.v'.
+Warning: Verilog 'assign' or 'tran' statements are written out. (VO-4)
+1
+write_sdf ${mydesign}_synth.sdf
+Information: Annotated 'cell' delays are assumed to include load delay. (UID-282)
+Information: Writing timing information to file '/localdisk/users/aven/vlsi_testing_lab2/exercise2/s1423_synth.sdf'. (WT-3)
+1
+write_sdc  ${mydesign}.sdc
+1
+1
+
+
+################ ATPG ################ 
+
+BUILD> read netlist s1423_synth.v
+ Begin reading netlist ( s1423_synth.v )... 
+ End parsing Verilog file s1423_synth.v with 0 errors. 
+ End reading netlist: #modules=131, top=s1423, #lines=1136, CPU_time=0.01 sec, Memory=0MB 
+BUILD> read netlist /localdisk/libraries/UMCL18U250D2_2.4/verilog_simulation_models/*.v
+ Begin reading netlists ( /localdisk/libraries/UMCL18U250D2_2.4/verilog_simulation_models/*.v )... 
+ End reading netlists: #files=506, #errors=0, #modules=474, top=NOR4M2D4, #lines=29130, CPU_time=0.28 sec, Memory=11MB 
+BUILD> run build_model s1423
+ ------------------------------------------------------------------------------ 
+ Begin build model for topcut = s1423 ... 
+ ------------------------------------------------------------------------------ 
+ There were 329 primitives and 0 faultable pins removed during model optimizations 
+ Warning: Rule B8 (unconnected module input pin) was violated 2 times. 
+ Warning: Rule N21 (unsupported UDP entry) was violated 1 times. 
+ End build model: #primitives=560, CPU_time=0.01 sec, Memory=0MB 
+ ------------------------------------------------------------------------------ 
+ Begin learning analyses... 
+ End learning analyses, total learning CPU time=0.02 sec. 
+ ------------------------------------------------------------------------------ 
+DRC> run drc
+ ------------------------------------------------------------------------------ 
+ Begin scan design rules checking... 
+ ------------------------------------------------------------------------------ 
+ Begin simulating test protocol procedures... 
+ Test protocol simulation completed, CPU time=0.00 sec. 
+ ------------------------------------------------------------------------------ 
+ Begin scan chain operation checking... 
+ Scan chain operation checking completed, CPU time=0.00 sec. 
+ ------------------------------------------------------------------------------ 
+ Begin clock rules checking... 
+ Warning: Rule C2 (unstable nonscan DFF when clocks off) was violated 74 times. 
+ Clock rules checking completed, CPU time=0.00 sec. 
+ ------------------------------------------------------------------------------ 
+ Begin nonscan rules checking... 
+ Nonscan cell summary: #DFF=74  #DLAT=0  #RAM_outs=0  tla_usage_type=none 
+ Nonscan behavior:  #CU=74 
+ Nonscan rules checking completed, CPU time=0.00 sec. 
+ ------------------------------------------------------------------------------ 
+ Begin DRC dependent learning... 
+ Fast-sequential depth results: control=0(0), observe=0(0), detect=0(0), CPU time=0.01 sec 
+ DRC dependent learning completed, CPU time=0.01 sec. 
+ ------------------------------------------------------------------------------ 
+ DRC Summary Report 
+ ------------------------------------------------------------------------------ 
+ Warning: Rule C2 (unstable nonscan DFF when clocks off) was violated 74 times. 
+ There were 74 violations that occurred during DRC process. 
+ Design rules checking was successful, total CPU time=0.01 sec. 
+ ------------------------------------------------------------------------------ 
+TEST> add faults -all
+ 2734 faults were added to fault list. 
+TEST> set patterns internal
+TEST> run atpg
+ ATPG performed for stuck fault model using internal pattern source. 
+ ---------------------------------------------------------- 
+ #patterns     #faults     #ATPG faults  test      process 
+ stored     detect/active  red/au/abort  coverage  CPU time 
+ ---------  -------------  ------------  --------  -------- 
+ Begin deterministic ATPG: #uncollapsed_faults=31, abort_limit=10... 
+ 2               8      0         0/8/0     0.29%      0.01 
+  
+     Uncollapsed Stuck Fault Summary Report 
+ ----------------------------------------------- 
+ fault class                     code   #faults 
+ ------------------------------  ----  --------- 
+ Detected                         DT          8 
+ Possibly detected                PT          0 
+ Undetectable                     UD          7 
+ ATPG untestable                  AU       2719 
+ Not detected                     ND          0 
+ ----------------------------------------------- 
+ total faults                              2734 
+ test coverage                             0.29% 
+ ----------------------------------------------- 
+            Pattern Summary Report 
+ ----------------------------------------------- 
+ #internal patterns                           2 
+     #basic_scan patterns                     2 
+ ----------------------------------------------- 
+TEST> write patterns my_vectors.v
+ End writing file 'my_vectors.v' with 2 patterns, File_size = 232, CPU_time = 0.0 sec

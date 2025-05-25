@@ -1,0 +1,568 @@
+######################## Synthesis ########################
+
+*dc_shell -f run.tcl | tee syn.log*
+
+set mydesign c1355
+c1355
+remove_design -all
+1
+analyze -f verilog ${mydesign}.v
+Running PRESTO HDLC
+Compiling source file ./c1355.v
+Presto compilation completed successfully.
+Loading db file '/localdisk/libraries/UMCL18U250D2_2.4/design_compiler/umcl18u250t2_wc.db'
+1
+elaborate $mydesign
+Loading db file '/eda/synopsys/2017-18/RHELx86/SYN_2017.09-SP3/libraries/syn/gtech.db'
+Loading db file '/eda/synopsys/2017-18/RHELx86/SYN_2017.09-SP3/libraries/syn/standard.sldb'
+Warning: The library named umcl18u250t2_wc specifies a very small trip-point value (0). (TIM-163)
+Warning: The library named umcl18u250t2_wc specifies a very small trip-point value (0). (TIM-163)
+  Loading link library 'umcl18u250t2_wc'
+  Loading link library 'gtech'
+Running PRESTO HDLC
+Presto compilation completed successfully.
+Elaborated 1 design.
+Current design is now 'c1355'.
+1
+current_design $mydesign
+Current design is 'c1355'.
+{c1355}
+create_clock -period 8  -name clk
+Warning: Creating virtual clock named 'clk' with no sources. (UID-348)
+1
+set_clock_latency    2  clk
+1
+set_input_delay      2 -clock clk [remove_from_collection [all_inputs] clk]
+Warning: Nothing implicitly matched 'clk' (SEL-003)
+1
+set_output_delay     2 -clock clk [all_outputs]
+1
+set_driving_cell -library umcl18u250t2_wc -lib_cell INVD1 [remove_from_collection [all_inputs] clk]
+Warning: Nothing implicitly matched 'clk' (SEL-003)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+1
+set_load 0.1 [all_outputs]
+1
+set_max_fanout 8 [all_inputs]
+1
+set_fanout_load 8 [all_outputs]
+1
+set_max_area 0
+1
+compile
+Information: Evaluating DesignWare library utilization. (UISN-27)
+
+============================================================================
+| DesignWare Building Block Library  |         Version         | Available |
+============================================================================
+| Basic DW Building Blocks           | N-2017.09-DWBB_201709.3 |     *     |
+| Licensed DW Building Blocks        |                         |           |
+============================================================================
+
+
+
+  Beginning Pass 1 Mapping
+  ------------------------
+  Processing 'c1355'
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+
+  Beginning Mapping Optimizations  (Medium effort)
+  -------------------------------
+
+                                  TOTAL
+   ELAPSED            WORST NEG   SETUP    DESIGN
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:03    5244.6      0.00       0.0       8.0
+    0:00:03    5244.6      0.00       0.0       8.0
+    0:00:03    5244.6      0.00       0.0       8.0
+    0:00:04    5244.6      0.00       0.0       8.0
+    0:00:04    5244.6      0.00       0.0       8.0
+    0:00:04    4236.4      0.16       2.4       8.0
+    0:00:04    4236.4      0.03       0.6       8.0
+    0:00:04    4317.7      0.02       0.0       8.0
+    0:00:05    4269.0      0.09       0.9       8.0
+    0:00:05    4297.4      0.33       0.3       8.0
+    0:00:05    4317.8      0.56       2.9       8.0
+    0:00:05    4321.8      0.46       2.8       8.0
+    0:00:06    4419.4      0.28       1.1       8.0
+    0:00:06    4435.7      0.16       1.2       8.0
+    0:00:06    4423.5      0.10       0.6       8.0
+    0:00:06    4431.6      0.09       0.5       8.0
+    0:00:06    4492.6      0.03       0.1       8.0
+    0:00:06    4512.9      0.00       0.0       8.0
+    0:00:06    4512.9      0.00       0.0       8.0
+    0:00:06    4512.9      0.00       0.0       8.0
+    0:00:06    4512.9      0.00       0.0       8.0
+    0:00:06    4512.9      0.00       0.0       8.0
+    0:00:06    4512.9      0.00       0.0       8.0
+    0:00:06    4512.9      0.00       0.0       8.0
+
+
+
+  Beginning Delay Optimization Phase
+  ----------------------------------
+
+                                  TOTAL
+   ELAPSED            WORST NEG   SETUP    DESIGN
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:06    4512.9      0.00       0.0       8.0
+    0:00:06    4512.9      0.00       0.0       8.0
+    0:00:07    4512.9      0.00       0.0       8.0
+
+
+  Beginning Design Rule Fixing  (max_fanout)
+  ----------------------------
+
+                                  TOTAL
+   ELAPSED            WORST NEG   SETUP    DESIGN
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:07    4512.9      0.00       0.0       8.0
+    0:00:07    4529.2      0.00       0.0       0.0
+
+
+  Beginning Area-Recovery Phase  (max_area 0)
+  -----------------------------
+
+                                  TOTAL
+   ELAPSED            WORST NEG   SETUP    DESIGN
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:07    4529.2      0.00       0.0       0.0
+    0:00:07    4529.2      0.00       0.0       0.0
+    0:00:07    4488.5      0.00       0.0       0.0
+    0:00:07    4488.5      0.00       0.0       0.0
+    0:00:07    4488.5      0.00       0.0       0.0
+    0:00:07    4488.5      0.00       0.0       0.0
+    0:00:07    4427.5      0.08       0.6       0.0
+    0:00:07    4427.5      0.08       0.6       0.0
+    0:00:07    4427.5      0.08       0.6       0.0
+    0:00:07    4427.5      0.08       0.6       0.0
+    0:00:07    4427.5      0.08       0.6       0.0
+    0:00:07    4427.5      0.08       0.6       0.0
+    0:00:07    4464.1      0.00       0.0       0.0
+    0:00:07    4451.9      0.00       0.0       0.0
+    0:00:07    4451.9      0.00       0.0       0.0
+    0:00:07    4451.9      0.00       0.0       0.0
+    0:00:07    4451.9      0.00       0.0       0.0
+    0:00:07    4451.9      0.00       0.0       0.0
+    0:00:07    4451.9      0.00       0.0       0.0
+    0:00:07    4468.2      0.00       0.0       0.0
+Loading db file '/localdisk/libraries/UMCL18U250D2_2.4/design_compiler/umcl18u250t2_wc.db'
+
+
+Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios
+
+
+  Optimization Complete
+  ---------------------
+1
+check_design
+1
+report_constraint -all_violators
+Information: Updating design information... (UID-85)
+
+****************************************
+Report : constraint
+        -all_violators
+Design : c1355
+Version: N-2017.09-SP3
+Date   : Sat Jun 17 13:27:09 2023
+****************************************
+
+
+   max_area
+
+                             Required        Actual
+   Design                      Area           Area           Slack
+   -----------------------------------------------------------------
+   c1355                        0.00        4468.18       -4468.18  (VIOLATED)
+
+
+1
+report_cell
+
+****************************************
+Report : cell
+Design : c1355
+Version: N-2017.09-SP3
+Date   : Sat Jun 17 13:27:09 2023
+****************************************
+
+Attributes:
+    b - black box (unknown)
+    h - hierarchical
+    n - noncombinational
+    r - removable
+    u - contains unmapped logic
+
+Cell                      Reference       Library             Area  Attributes
+--------------------------------------------------------------------------------
+U121                      AOI32D1         umcl18u250t2_wc 28.459999
+U125                      AOI32D1         umcl18u250t2_wc 28.459999
+U129                      AOI32D1         umcl18u250t2_wc 28.459999
+U133                      AOI32D1         umcl18u250t2_wc 28.459999
+U156                      AOI21D1         umcl18u250t2_wc 20.330000
+U157                      EXNOR2D1        umcl18u250t2_wc 28.459999
+U160                      AOI21D1         umcl18u250t2_wc 20.330000
+U161                      EXOR2D1         umcl18u250t2_wc 28.459999
+U162                      OAI32D1         umcl18u250t2_wc 28.459999
+U163                      AOI22D1         umcl18u250t2_wc 24.389999
+U164                      OR2D1           umcl18u250t2_wc 16.260000
+U167                      AOI21D1         umcl18u250t2_wc 20.330000
+U168                      EXOR2D1         umcl18u250t2_wc 28.459999
+U171                      AOI21D1         umcl18u250t2_wc 20.330000
+U172                      EXNOR2D1        umcl18u250t2_wc 28.459999
+U175                      AOI21D1         umcl18u250t2_wc 20.330000
+U177                      EXNOR3D1        umcl18u250t2_wc 52.849998
+U178                      EXOR2D1         umcl18u250t2_wc 28.459999
+U179                      EXOR2D1         umcl18u250t2_wc 28.459999
+U182                      AOI21D1         umcl18u250t2_wc 20.330000
+U184                      EXOR2D1         umcl18u250t2_wc 28.459999
+U185                      EXNOR3D1        umcl18u250t2_wc 52.849998
+U186                      EXOR2D1         umcl18u250t2_wc 28.459999
+U189                      AOI21D1         umcl18u250t2_wc 20.330000
+U191                      EXOR2D1         umcl18u250t2_wc 28.459999
+U192                      EXOR2D1         umcl18u250t2_wc 28.459999
+U195                      AOI21D1         umcl18u250t2_wc 20.330000
+U197                      EXOR2D1         umcl18u250t2_wc 28.459999
+U198                      EXOR2D1         umcl18u250t2_wc 28.459999
+U199                      AOI32D2         umcl18u250t2_wc 44.720001
+U200                      NAN2D1          umcl18u250t2_wc 12.200000
+U201                      INVD1           umcl18u250t2_wc 8.130000
+U202                      NAN2D1          umcl18u250t2_wc 12.200000
+U203                      BUFD1           umcl18u250t2_wc 12.200000
+U204                      AND2D1          umcl18u250t2_wc 16.260000
+U205                      AND2D1          umcl18u250t2_wc 16.260000
+U206                      AOI32D1         umcl18u250t2_wc 28.459999
+U207                      BUFD1           umcl18u250t2_wc 12.200000
+U208                      BUFD1           umcl18u250t2_wc 12.200000
+U209                      OAI32D1         umcl18u250t2_wc 28.459999
+U210                      OAI32D1         umcl18u250t2_wc 28.459999
+U211                      AND2D1          umcl18u250t2_wc 16.260000
+U212                      INVD1           umcl18u250t2_wc 8.130000
+U213                      OAI32D1         umcl18u250t2_wc 28.459999
+U214                      INVD1           umcl18u250t2_wc 8.130000
+U215                      OR2D1           umcl18u250t2_wc 16.260000
+U216                      INVD1           umcl18u250t2_wc 8.130000
+U217                      INVD1           umcl18u250t2_wc 8.130000
+U218                      NOR3D2          umcl18u250t2_wc 28.459999
+U219                      OA32D2          umcl18u250t2_wc 40.660000
+U220                      AOI22M10D1      umcl18u250t2_wc 32.520000
+U221                      INVD1           umcl18u250t2_wc 8.130000
+U222                      AOI32DL         umcl18u250t2_wc 28.459999
+U223                      AOI32DL         umcl18u250t2_wc 28.459999
+U224                      AOI32DL         umcl18u250t2_wc 28.459999
+U225                      NAN2DL          umcl18u250t2_wc 12.200000
+U226                      NAN2DL          umcl18u250t2_wc 12.200000
+U227                      NAN2DL          umcl18u250t2_wc 12.200000
+U228                      NAN2DL          umcl18u250t2_wc 12.200000
+U229                      AOI32DL         umcl18u250t2_wc 28.459999
+U230                      AOI32DL         umcl18u250t2_wc 28.459999
+U231                      AOI32DL         umcl18u250t2_wc 28.459999
+U232                      AOI32DL         umcl18u250t2_wc 28.459999
+U233                      NAN2DL          umcl18u250t2_wc 12.200000
+U234                      AOI32DL         umcl18u250t2_wc 28.459999
+U235                      OR2DL           umcl18u250t2_wc 16.260000
+U236                      INVD1           umcl18u250t2_wc 8.130000
+U237                      AOI32DL         umcl18u250t2_wc 28.459999
+U238                      AOI32DL         umcl18u250t2_wc 28.459999
+U239                      AOI32DL         umcl18u250t2_wc 28.459999
+U240                      AOI32DL         umcl18u250t2_wc 28.459999
+U241                      AOI32DL         umcl18u250t2_wc 28.459999
+U242                      AOI32DL         umcl18u250t2_wc 28.459999
+U243                      AOI32DL         umcl18u250t2_wc 28.459999
+U244                      AOI32DL         umcl18u250t2_wc 28.459999
+U245                      NAN2DL          umcl18u250t2_wc 12.200000
+U246                      NAN2DL          umcl18u250t2_wc 12.200000
+U247                      NAN2DL          umcl18u250t2_wc 12.200000
+U248                      AOI32DL         umcl18u250t2_wc 28.459999
+U249                      AOI32DL         umcl18u250t2_wc 28.459999
+U250                      AOI32DL         umcl18u250t2_wc 28.459999
+U251                      OAI32D2         umcl18u250t2_wc 44.720001
+U252                      OAI32D4         umcl18u250t2_wc 52.849998
+U253                      NOR3D2          umcl18u250t2_wc 28.459999
+U254                      AOI32DL         umcl18u250t2_wc 28.459999
+U255                      NAN2DL          umcl18u250t2_wc 12.200000
+U256                      NAN2DL          umcl18u250t2_wc 12.200000
+U257                      OAI32D2         umcl18u250t2_wc 44.720001
+U258                      NOR3D1          umcl18u250t2_wc 16.260000
+U259                      AOI32DL         umcl18u250t2_wc 28.459999
+U260                      AOI32DL         umcl18u250t2_wc 28.459999
+U261                      EXOR2DL         umcl18u250t2_wc 28.459999
+U262                      AND2DL          umcl18u250t2_wc 16.260000
+U263                      INVDL           umcl18u250t2_wc 8.130000
+U264                      AOI32DL         umcl18u250t2_wc 28.459999
+U265                      AOI32DL         umcl18u250t2_wc 28.459999
+U266                      NAN2DL          umcl18u250t2_wc 12.200000
+U267                      NAN2DL          umcl18u250t2_wc 12.200000
+U268                      INVD1           umcl18u250t2_wc 8.130000
+U269                      OAI32D4         umcl18u250t2_wc 52.849998
+U270                      NOR3D1          umcl18u250t2_wc 16.260000
+U271                      AOI32DL         umcl18u250t2_wc 28.459999
+U272                      OAI32DL         umcl18u250t2_wc 28.459999
+U273                      NAN2DL          umcl18u250t2_wc 12.200000
+U274                      NAN2DL          umcl18u250t2_wc 12.200000
+U275                      AOI32D1         umcl18u250t2_wc 28.459999
+U276                      NAN2DL          umcl18u250t2_wc 12.200000
+U277                      NAN2DL          umcl18u250t2_wc 12.200000
+U278                      NAN2DL          umcl18u250t2_wc 12.200000
+U279                      NAN2DL          umcl18u250t2_wc 12.200000
+U280                      NAN2DL          umcl18u250t2_wc 12.200000
+U281                      NAN2DL          umcl18u250t2_wc 12.200000
+U282                      NOR2D1          umcl18u250t2_wc 12.200000
+U283                      EXOR3DL         umcl18u250t2_wc 52.849998
+U284                      AND3DL          umcl18u250t2_wc 20.330000
+U285                      AND3DL          umcl18u250t2_wc 20.330000
+U286                      INVDL           umcl18u250t2_wc 8.130000
+U287                      EXNOR2DL        umcl18u250t2_wc 28.459999
+U288                      EXNOR2DL        umcl18u250t2_wc 28.459999
+U289                      EXOR2DL         umcl18u250t2_wc 28.459999
+U290                      EXOR2DL         umcl18u250t2_wc 28.459999
+U291                      EXOR3DL         umcl18u250t2_wc 52.849998
+U292                      EXOR3DL         umcl18u250t2_wc 52.849998
+U293                      EXOR3DL         umcl18u250t2_wc 52.849998
+U294                      EXOR3DL         umcl18u250t2_wc 52.849998
+U295                      EXOR3DL         umcl18u250t2_wc 52.849998
+U296                      INVDL           umcl18u250t2_wc 8.130000
+U297                      NAN2DL          umcl18u250t2_wc 12.200000
+U298                      NAN2DL          umcl18u250t2_wc 12.200000
+U299                      NAN2DL          umcl18u250t2_wc 12.200000
+U300                      NAN2DL          umcl18u250t2_wc 12.200000
+U301                      NAN2DL          umcl18u250t2_wc 12.200000
+U302                      NAN2DL          umcl18u250t2_wc 12.200000
+U303                      INVDL           umcl18u250t2_wc 8.130000
+U304                      NAN2DL          umcl18u250t2_wc 12.200000
+U305                      INVDL           umcl18u250t2_wc 8.130000
+U306                      INVDL           umcl18u250t2_wc 8.130000
+U307                      INVDL           umcl18u250t2_wc 8.130000
+U308                      INVDL           umcl18u250t2_wc 8.130000
+U309                      INVDL           umcl18u250t2_wc 8.130000
+U310                      INVDL           umcl18u250t2_wc 8.130000
+U311                      INVDL           umcl18u250t2_wc 8.130000
+U312                      INVDL           umcl18u250t2_wc 8.130000
+U313                      INVDL           umcl18u250t2_wc 8.130000
+U314                      INVDL           umcl18u250t2_wc 8.130000
+U315                      INVDL           umcl18u250t2_wc 8.130000
+U316                      EXOR2DL         umcl18u250t2_wc 28.459999
+U317                      EXOR2DL         umcl18u250t2_wc 28.459999
+U318                      EXOR2DL         umcl18u250t2_wc 28.459999
+U319                      EXOR2DL         umcl18u250t2_wc 28.459999
+U320                      EXOR2DL         umcl18u250t2_wc 28.459999
+U321                      EXOR2DL         umcl18u250t2_wc 28.459999
+U322                      EXOR2DL         umcl18u250t2_wc 28.459999
+U323                      AND3DL          umcl18u250t2_wc 20.330000
+U324                      AND3DL          umcl18u250t2_wc 20.330000
+U325                      INVD1           umcl18u250t2_wc 8.130000
+U326                      INVD1           umcl18u250t2_wc 8.130000
+U327                      NOR3M1D1        umcl18u250t2_wc 20.330000
+U328                      NOR2D1          umcl18u250t2_wc 12.200000
+U329                      NOR2D1          umcl18u250t2_wc 12.200000
+U330                      NOR2D1          umcl18u250t2_wc 12.200000
+U331                      NOR2D1          umcl18u250t2_wc 12.200000
+U332                      NAN2D1          umcl18u250t2_wc 12.200000
+U333                      INVD1           umcl18u250t2_wc 8.130000
+U334                      INVD1           umcl18u250t2_wc 8.130000
+U335                      INVD1           umcl18u250t2_wc 8.130000
+U336                      NAN2D1          umcl18u250t2_wc 12.200000
+U337                      NAN2D1          umcl18u250t2_wc 12.200000
+U338                      NAN2D1          umcl18u250t2_wc 12.200000
+U339                      NAN2D1          umcl18u250t2_wc 12.200000
+U340                      EXOR3D1         umcl18u250t2_wc 52.849998
+U341                      NOR3DL          umcl18u250t2_wc 16.260000
+U342                      NOR3DL          umcl18u250t2_wc 16.260000
+U343                      NOR3D1          umcl18u250t2_wc 16.260000
+U344                      OAI32D1         umcl18u250t2_wc 28.459999
+U345                      NOR3D1          umcl18u250t2_wc 16.260000
+U346                      EXOR3D1         umcl18u250t2_wc 52.849998
+U347                      AND3D1          umcl18u250t2_wc 20.330000
+U348                      AND3D1          umcl18u250t2_wc 20.330000
+U349                      AND3D1          umcl18u250t2_wc 20.330000
+U350                      AND3D1          umcl18u250t2_wc 20.330000
+U351                      AND3D1          umcl18u250t2_wc 20.330000
+U352                      AND3D1          umcl18u250t2_wc 20.330000
+U353                      AND3D1          umcl18u250t2_wc 20.330000
+U354                      AND3D1          umcl18u250t2_wc 20.330000
+U355                      EXOR3D1         umcl18u250t2_wc 52.849998
+U356                      EXOR3D1         umcl18u250t2_wc 52.849998
+U357                      EXOR3D1         umcl18u250t2_wc 52.849998
+U358                      EXOR3D1         umcl18u250t2_wc 52.849998
+U359                      EXOR3D1         umcl18u250t2_wc 52.849998
+U360                      EXOR3D1         umcl18u250t2_wc 52.849998
+U361                      INVD1           umcl18u250t2_wc 8.130000
+U362                      INVD1           umcl18u250t2_wc 8.130000
+U363                      INVD1           umcl18u250t2_wc 8.130000
+U364                      INVD1           umcl18u250t2_wc 8.130000
+U365                      INVD1           umcl18u250t2_wc 8.130000
+U366                      INVD1           umcl18u250t2_wc 8.130000
+U367                      INVD1           umcl18u250t2_wc 8.130000
+U368                      INVD1           umcl18u250t2_wc 8.130000
+U369                      INVD1           umcl18u250t2_wc 8.130000
+U370                      INVD1           umcl18u250t2_wc 8.130000
+U371                      INVD1           umcl18u250t2_wc 8.130000
+U372                      INVD1           umcl18u250t2_wc 8.130000
+U373                      INVD1           umcl18u250t2_wc 8.130000
+U374                      INVD1           umcl18u250t2_wc 8.130000
+--------------------------------------------------------------------------------
+Total 205 cells                                           4468.179916
+1
+write -format verilog -hierarchy -output ${mydesign}_synth.v
+Writing verilog file '/localdisk/users/aven/vlsi_testing_lab2/exercise1/1.1/c1355_synth.v'.
+Warning: Verilog 'assign' or 'tran' statements are written out. (VO-4)
+1
+write -format verilog -hierarchy -output ${mydesign}_synth.v
+Writing verilog file '/localdisk/users/aven/vlsi_testing_lab2/exercise1/1.1/c1355_synth.v'.
+Warning: Verilog 'assign' or 'tran' statements are written out. (VO-4)
+1
+write_sdf ${mydesign}_synth.sdf
+Information: Annotated 'cell' delays are assumed to include load delay. (UID-282)
+Information: Writing timing information to file '/localdisk/users/aven/vlsi_testing_lab2/exercise1/1.1/c1355_synth.sdf'. (WT-3)
+1
+write_sdc  ${mydesign}.sdc
+1
+1
+
+
+
+######################## Fault Simulation ######################## 
+
+BUILD> read netlist c1355_synth.v
+ Begin reading netlist ( c1355_synth.v )... 
+ End parsing Verilog file c1355_synth.v with 0 errors. 
+ End reading netlist: #modules=35, top=c1355, #lines=275, CPU_time=0.00 sec, Memory=0MB 
+BUILD> read netlist /localdisk/libraries/UMCL18U250D2_2.4/verilog_simulation_models/*.v
+ Begin reading netlists ( /localdisk/libraries/UMCL18U250D2_2.4/verilog_simulation_models/*.v )... 
+ End reading netlists: #files=506, #errors=0, #modules=496, top=NOR4M2D4, #lines=29130, CPU_time=0.28 sec, Memory=11MB 
+BUILD> run build_model c1355
+ ------------------------------------------------------------------------------ 
+ Begin build model for topcut = c1355 ... 
+ ------------------------------------------------------------------------------ 
+ There were 31 primitives and 0 faultable pins removed during model optimizations 
+ End build model: #primitives=376, CPU_time=0.00 sec, Memory=0MB 
+ ------------------------------------------------------------------------------ 
+ Begin learning analyses... 
+ End learning analyses, total learning CPU time=0.02 sec. 
+ ------------------------------------------------------------------------------ 
+DRC> run drc
+ ------------------------------------------------------------------------------ 
+ Begin scan design rules checking... 
+ ------------------------------------------------------------------------------ 
+ Begin simulating test protocol procedures... 
+ Test protocol simulation completed, CPU time=0.00 sec. 
+ ------------------------------------------------------------------------------ 
+ Begin scan chain operation checking... 
+ Scan chain operation checking completed, CPU time=0.00 sec. 
+ ------------------------------------------------------------------------------ 
+ Begin nonscan rules checking... 
+ Nonscan cell summary: #DFF=0  #DLAT=0  #RAM_outs=0  tla_usage_type=none 
+ Nonscan rules checking completed, CPU time=0.00 sec. 
+ ------------------------------------------------------------------------------ 
+ Begin DRC dependent learning... 
+ Fast-sequential depth results: control=0(0), observe=0(0), detect=0(0), CPU time=0.00 sec 
+ DRC dependent learning completed, CPU time=0.01 sec. 
+ ------------------------------------------------------------------------------ 
+ DRC Summary Report 
+ ------------------------------------------------------------------------------ 
+ No violations occurred during DRC process. 
+ Design rules checking was successful, total CPU time=0.01 sec. 
+ ------------------------------------------------------------------------------ 
+TEST> add faults -all
+ 1642 faults were added to fault list. 
+TEST> set patterns external c1355_test_set.v
+ End reading 127 patterns, CPU_time = 0.02 sec, Memory = 0MB 
+TEST> run fault_sim
+ Simulation performed for 1642 faults on circuit size of 376 gates. 
+ -------------------------------------------- 
+ #patterns     #faults     test      process 
+ simulated  detect/active  coverage  CPU time 
+ ---------  -------------  --------  -------- 
+ 32           1282    360    78.08%      0.00 
+ 64            156    204    87.58%      0.00 
+ 96            137     67    95.92%      0.00 
+ 127            58      9    99.45%      0.00 
+ Fault simulation completed: #patterns=127, CPU time=0.00 

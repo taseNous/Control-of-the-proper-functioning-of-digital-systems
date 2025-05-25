@@ -1,0 +1,69 @@
+BUILD> read netlist c1355_synth.v
+ Begin reading netlist ( c1355_synth.v )... 
+ End parsing Verilog file c1355_synth.v with 0 errors. 
+ End reading netlist: #modules=35, top=c1355, #lines=275, CPU_time=0.00 sec, Memory=0MB 
+BUILD> read netlist /localdisk/libraries/UMCL18U250D2_2.4/verilog_simulation_models/*.v
+ Begin reading netlists ( /localdisk/libraries/UMCL18U250D2_2.4/verilog_simulation_models/*.v )... 
+ End reading netlists: #files=506, #errors=0, #modules=496, top=NOR4M2D4, #lines=29130, CPU_time=0.28 sec, Memory=11MB 
+BUILD> run build_model c1355
+ ------------------------------------------------------------------------------ 
+ Begin build model for topcut = c1355 ... 
+ ------------------------------------------------------------------------------ 
+ There were 31 primitives and 0 faultable pins removed during model optimizations 
+ End build model: #primitives=376, CPU_time=0.00 sec, Memory=0MB 
+ ------------------------------------------------------------------------------ 
+ Begin learning analyses... 
+ End learning analyses, total learning CPU time=0.02 sec. 
+ ------------------------------------------------------------------------------ 
+DRC> run drc
+ ------------------------------------------------------------------------------ 
+ Begin scan design rules checking... 
+ ------------------------------------------------------------------------------ 
+ Begin simulating test protocol procedures... 
+ Test protocol simulation completed, CPU time=0.00 sec. 
+ ------------------------------------------------------------------------------ 
+ Begin scan chain operation checking... 
+ Scan chain operation checking completed, CPU time=0.00 sec. 
+ ------------------------------------------------------------------------------ 
+ Begin nonscan rules checking... 
+ Nonscan cell summary: #DFF=0  #DLAT=0  #RAM_outs=0  tla_usage_type=none 
+ Nonscan rules checking completed, CPU time=0.01 sec. 
+ ------------------------------------------------------------------------------ 
+ Begin DRC dependent learning... 
+ Fast-sequential depth results: control=0(0), observe=0(0), detect=0(0), CPU time=0.00 sec 
+ DRC dependent learning completed, CPU time=0.00 sec. 
+ ------------------------------------------------------------------------------ 
+ DRC Summary Report 
+ ------------------------------------------------------------------------------ 
+ No violations occurred during DRC process. 
+ Design rules checking was successful, total CPU time=0.01 sec. 
+ ------------------------------------------------------------------------------ 
+TEST> add faults -all
+ 1642 faults were added to fault list. 
+TEST> remove faults /top/U275
+ Error: Invalid argument "/top/U275". (M1) 
+TEST> remove faults U275
+ 12 faults were removed from the fault list. 
+TEST> remove faults U121
+ 12 faults were removed from the fault list. 
+TEST> remove faults U125
+ 12 faults were removed from the fault list. 
+TEST> remove faults U129
+ 12 faults were removed from the fault list. 
+TEST> remove faults U133
+ 12 faults were removed from the fault list. 
+TEST> remove faults U206
+ 12 faults were removed from the fault list. 
+TEST> set patterns external c1355_test_set.v
+ End reading 127 patterns, CPU_time = 0.02 sec, Memory = 0MB 
+TEST> run fault_sim
+ Simulation performed for 1570 faults on circuit size of 376 gates. 
+ -------------------------------------------- 
+ #patterns     #faults     test      process 
+ simulated  detect/active  coverage  CPU time 
+ ---------  -------------  --------  -------- 
+ 32           1231    339    78.41%      0.00 
+ 64            147    192    87.77%      0.00 
+ 96            125     67    95.73%      0.00 
+ 127            58      9    99.43%      0.00 
+ Fault simulation completed: #patterns=127, CPU time=0.00 

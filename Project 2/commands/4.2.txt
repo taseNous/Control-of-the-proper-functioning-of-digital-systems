@@ -1,0 +1,80 @@
+BUILD> read netlist s1423_synth.v
+ Begin reading netlist ( s1423_synth.v )... 
+ End parsing Verilog file s1423_synth.v with 0 errors. 
+ End reading netlist: #modules=145, top=s1423, #lines=1234, CPU_time=0.01 sec, Memory=0MB 
+BUILD> read netlist /localdisk/libraries/UMCL18U250D2_2.4/verilog_simulation_models/*.v
+ Begin reading netlists ( /localdisk/libraries/UMCL18U250D2_2.4/verilog_simulation_models/*.v )... 
+ End reading netlists: #files=506, #errors=0, #modules=460, top=NOR4M2D4, #lines=29130, CPU_time=0.28 sec, Memory=11MB 
+BUILD> run build_model s1423
+ ------------------------------------------------------------------------------ 
+ Begin build model for topcut = s1423 ... 
+ ------------------------------------------------------------------------------ 
+ There were 303 primitives and 0 faultable pins removed during model optimizations 
+ Warning: Rule B8 (unconnected module input pin) was violated 2 times. 
+ Warning: Rule N21 (unsupported UDP entry) was violated 1 times. 
+ End build model: #primitives=723, CPU_time=0.02 sec, Memory=1MB 
+ ------------------------------------------------------------------------------ 
+ Begin learning analyses... 
+ End learning analyses, total learning CPU time=0.01 sec. 
+ ------------------------------------------------------------------------------ 
+DRC> run drc
+ ------------------------------------------------------------------------------ 
+ Begin scan design rules checking... 
+ ------------------------------------------------------------------------------ 
+ Begin simulating test protocol procedures... 
+ Test protocol simulation completed, CPU time=0.00 sec. 
+ ------------------------------------------------------------------------------ 
+ Begin scan chain operation checking... 
+ Scan chain operation checking completed, CPU time=0.00 sec. 
+ ------------------------------------------------------------------------------ 
+ Begin clock rules checking... 
+ Warning: Rule C2 (unstable nonscan DFF when clocks off) was violated 74 times. 
+ Clock rules checking completed, CPU time=0.00 sec. 
+ ------------------------------------------------------------------------------ 
+ Begin nonscan rules checking... 
+ Nonscan cell summary: #DFF=74  #DLAT=0  #RAM_outs=0  tla_usage_type=none 
+ Nonscan behavior:  #CU=74 
+ Nonscan rules checking completed, CPU time=0.00 sec. 
+ ------------------------------------------------------------------------------ 
+ Begin DRC dependent learning... 
+ Fast-sequential depth results: control=0(0), observe=0(0), detect=0(0), CPU time=0.00 sec 
+ DRC dependent learning completed, CPU time=0.00 sec. 
+ ------------------------------------------------------------------------------ 
+ DRC Summary Report 
+ ------------------------------------------------------------------------------ 
+ Warning: Rule C2 (unstable nonscan DFF when clocks off) was violated 74 times. 
+ There were 74 violations that occurred during DRC process. 
+ Design rules checking was successful, total CPU time=0.00 sec. 
+ ------------------------------------------------------------------------------ 
+TEST> add faults -all
+ 3242 faults were added to fault list. 
+TEST> set patterns internal
+TEST> run atpg
+ ATPG performed for stuck fault model using internal pattern source. 
+ ---------------------------------------------------------- 
+ #patterns     #faults     #ATPG faults  test      process 
+ stored     detect/active  red/au/abort  coverage  CPU time 
+ ---------  -------------  ------------  --------  -------- 
+ Begin deterministic ATPG: #uncollapsed_faults=40, abort_limit=10... 
+ 2               8      0         0/8/0     0.25%      0.00 
+  
+     Uncollapsed Stuck Fault Summary Report 
+ ----------------------------------------------- 
+ fault class                     code   #faults 
+ ------------------------------  ----  --------- 
+ Detected                         DT          8 
+ Possibly detected                PT          0 
+ Undetectable                     UD          4 
+ ATPG untestable                  AU       3230 
+ Not detected                     ND          0 
+ ----------------------------------------------- 
+ total faults                              3242 
+ test coverage                             0.25% 
+ ----------------------------------------------- 
+            Pattern Summary Report 
+ ----------------------------------------------- 
+ #internal patterns                           2 
+     #basic_scan patterns                     2 
+ ----------------------------------------------- 
+TEST> write patterns s1423_deterministic_vectors.ν
+ End writing file 's1423_deterministic_vectors.?' with 2 patterns, File_size = 232, CPU_time = 0.0 sec

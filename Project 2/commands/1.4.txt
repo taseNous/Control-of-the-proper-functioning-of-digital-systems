@@ -1,0 +1,88 @@
+BUILD> read netlist c1355_synth.v
+ Begin reading netlist ( c1355_synth.v )... 
+ End parsing Verilog file c1355_synth.v with 0 errors. 
+ End reading netlist: #modules=35, top=c1355, #lines=275, CPU_time=0.00 sec, Memory=0MB 
+BUILD> read netlist /localdisk/libraries/UMCL18U250D2_2.4/verilog_simulation_models/*.v
+ Begin reading netlists ( /localdisk/libraries/UMCL18U250D2_2.4/verilog_simulation_models/*.v )... 
+ End reading netlists: #files=506, #errors=0, #modules=496, top=NOR4M2D4, #lines=29130, CPU_time=0.27 sec, Memory=11MB 
+BUILD> run build_model c1355
+ ------------------------------------------------------------------------------ 
+ Begin build model for topcut = c1355 ... 
+ ------------------------------------------------------------------------------ 
+ There were 31 primitives and 0 faultable pins removed during model optimizations 
+ End build model: #primitives=376, CPU_time=0.00 sec, Memory=0MB 
+ ------------------------------------------------------------------------------ 
+ Begin learning analyses... 
+ End learning analyses, total learning CPU time=0.02 sec. 
+ ------------------------------------------------------------------------------ 
+DRC> run drc
+ ------------------------------------------------------------------------------ 
+ Begin scan design rules checking... 
+ ------------------------------------------------------------------------------ 
+ Begin simulating test protocol procedures... 
+ Test protocol simulation completed, CPU time=0.00 sec. 
+ ------------------------------------------------------------------------------ 
+ Begin scan chain operation checking... 
+ Scan chain operation checking completed, CPU time=0.00 sec. 
+ ------------------------------------------------------------------------------ 
+ Begin nonscan rules checking... 
+ Nonscan cell summary: #DFF=0  #DLAT=0  #RAM_outs=0  tla_usage_type=none 
+ Nonscan rules checking completed, CPU time=0.00 sec. 
+ ------------------------------------------------------------------------------ 
+ Begin DRC dependent learning... 
+ Fast-sequential depth results: control=0(0), observe=0(0), detect=0(0), CPU time=0.00 sec 
+ DRC dependent learning completed, CPU time=0.00 sec. 
+ ------------------------------------------------------------------------------ 
+ DRC Summary Report 
+ ------------------------------------------------------------------------------ 
+ No violations occurred during DRC process. 
+ Design rules checking was successful, total CPU time=0.00 sec. 
+ ------------------------------------------------------------------------------ 
+TEST> read faults c1355_faults.dat
+ Warning: 594 invalid fault sites were ignored (first occ. at line 7). (M107) 
+ 1614 faults were read in and 1020 new faults were added to fault list. 
+TEST> set patterns internal
+TEST> run atpg
+ ATPG performed for stuck fault model using internal pattern source. 
+ ---------------------------------------------------------- 
+ #patterns     #faults     #ATPG faults  test      process 
+ stored     detect/active  red/au/abort  coverage  CPU time 
+ ---------  -------------  ------------  --------  -------- 
+ Begin deterministic ATPG: #uncollapsed_faults=1020, abort_limit=10... 
+ 27            792    228         0/0/2    77.65%      0.02 
+ 58            104    124         0/0/3    87.84%      0.02 
+ 82             72     52         0/0/3    94.90%      0.03 
+ 105            51      1         0/0/3    99.90%      0.04 
+  
+     Uncollapsed Stuck Fault Summary Report 
+ ----------------------------------------------- 
+ fault class                     code   #faults 
+ ------------------------------  ----  --------- 
+ Detected                         DT       1019 
+ Possibly detected                PT          0 
+ Undetectable                     UD          0 
+ ATPG untestable                  AU          0 
+ Not detected                     ND          1 
+ ----------------------------------------------- 
+ total faults                              1020 
+ test coverage                            99.90% 
+ ----------------------------------------------- 
+            Pattern Summary Report 
+ ----------------------------------------------- 
+ #internal patterns                         105 
+     #basic_scan patterns                   105 
+ ----------------------------------------------- 
+TEST> write patterns my_vectors.ν
+ End writing file 'my_vectors.?' with 105 patterns, File_size = 12608, CPU_time = 0.0 sec. 
+TEST> set patterns external c1355_test_set.v
+ End reading 127 patterns, CPU_time = 0.02 sec, Memory = 0MB 
+TEST> run fault_sim
+ Simulation performed for 1 faults on circuit size of 376 gates. 
+ -------------------------------------------- 
+ #patterns     #faults     test      process 
+ simulated  detect/active  coverage  CPU time 
+ ---------  -------------  --------  -------- 
+ 32              1      0   100.00%      0.00 
+ Fault simulation completed: #patterns=32, CPU time=0.00 
+TEST> write faults undetected_faults1.dat -class ND
+ Write faults completed: 0 faults were written into file "undetected_faults1.dat".
